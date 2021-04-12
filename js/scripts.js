@@ -15,11 +15,11 @@ CustomerOrder.prototype.assignId = function () {
   return this.currentId;
 }
 
-AddressBook.prototype.deleteContact = function (id) {
-  if (this.contacts[id] === undefined) {
+CustomerOrder.prototype.deleteContact = function (id) {
+  if (this.pizzas[id] === undefined) {
     return false;
   }
-  delete this.contacts[id];
+  delete this.pizzas[id];
   return true;
 }
 
@@ -31,7 +31,7 @@ function Pizza(crustSize, crustType, toppings = []) {
 
 let order = new CustomerOrder();
 let pizza1 = new Pizza("Large", "Thin Crust", ["Cheese", "Peporoni", "Tomato", "Red Onion"]);
-let pizza1 = new Pizza("X-Large", "Regular Crust", ["Cheese", "Peporoni", "Tomato", "Red Onion"]);
+let pizza2 = new Pizza("X-Large", "Regular Crust", ["Cheese", "Peporoni", "Tomato", "Red Onion"]);
 
 order.addPizza(pizza1);
 order.addPizza(pizza2);
