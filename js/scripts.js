@@ -61,7 +61,120 @@ function showPizza(pizzaId) {
   pizza.crustType = document.getElementById("type-option").value;
   $(".crust-type").html(pizza.crustType);
 
-  $(".cheese").html(pizza.toppings[0]);
+  if (document.getElementById("new-cheese").checked) {
+    pizza.toppings[0] = "Cheese";
+    $(".cheese").html(pizza.toppings[0]);
+    $(".cheese").show();
+  }
+
+  if (document.getElementById("new-mushroom").checked) {
+    pizza.toppings[1] = "Mushroom";
+    $(".mushroom").html(pizza.toppings[1]);
+    $(".mushroom").show();
+  }
+
+  if (document.getElementById("new-greenpepper").checked) {
+    pizza.toppings[2] = "Green Peper";
+    $(".greenpepper").html(pizza.toppings[2]);
+    $(".greenpepper").show();
+  }
+
+  if (document.getElementById("new-tomato").checked) {
+    pizza.toppings[3] = "Tomato";
+    $(".tomato").html(pizza.toppings[3]);
+    $(".tomato").show();
+  }
+
+  if (document.getElementById("new-pepperoni").checked) {
+    pizza.toppings[4] = "Pepperoni";
+    $(".pepperoni").html(pizza.toppings[4]);
+    $(".pepperoni").show();
+  }
+
+  if (document.getElementById("new-redonion").checked) {
+    pizza.toppings[5] = "Red Onion";
+    $(".redonion").html(pizza.toppings[5]);
+    $(".redonion").show();
+  }
+
+  if (document.getElementById("new-oliveoil").checked) {
+    pizza.toppings[6] = "Olive Oil";
+    $(".oliveoil").html(pizza.toppings[6]);
+    $(".oliveoil").show();
+  }
+
+  if (document.getElementById("new-oliveoil").checked) {
+    pizza.toppings[7] = "Olive Oil";
+    $(".oliveoil").html(pizza.toppings[7]);
+    $(".oliveoil").show();
+  }
+
+  if (document.getElementById("new-blackolives").checked) {
+    pizza.toppings[8] = "Black Olives";
+    $(".blackolives").html(pizza.toppings[8]);
+    $(".blackolives").show();
+  }
+
+  if (document.getElementById("new-chicken").checked) {
+    pizza.toppings[9] = "Chicken";
+    $(".chicken").html(pizza.toppings[9]);
+    $(".chicken").show();
+  }
+
+  if (document.getElementById("new-beef").checked) {
+    pizza.toppings[10] = "Beef";
+    $(".beef").html(pizza.toppings[10]);
+    $(".beef").show();
+  }
+
+  if (document.getElementById("new-redpepper").checked) {
+    pizza.toppings[11] = "Red pepper";
+    $(".redpepper").html(pizza.toppings[11]);
+    $(".redpepper").show();
+  }
+
+  if (document.getElementById("new-jalapeno").checked) {
+    pizza.toppings[12] = "Jalapeno";
+    $(".jalapeno").html(pizza.toppings[12]);
+    $(".jalapeno").show();
+  }
+
+  if (document.getElementById("new-spinach").checked) {
+    pizza.toppings[13] = "Spinach";
+    $(".spinach").html(pizza.toppings[13]);
+    $(".spinach").show();
+  }
+
+  if (document.getElementById("new-pineapple").checked) {
+    pizza.toppings[11] = "Pineapple";
+    $(".pineapple").html(pizza.toppings[11]);
+    $(".pineapple").show();
+  }
+
+  if (document.getElementById("new-anchovy").checked) {
+    pizza.toppings[12] = "Anchovy";
+    $(".anchovy").html(pizza.toppings[12]);
+    $(".anchovy").show();
+  }
+
+  if (document.getElementById("new-artichoke").checked) {
+    pizza.toppings[13] = "Artichoke";
+    $(".artichoke").html(pizza.toppings[13]);
+    $(".artichoke").show();
+  }
+
+  if (document.getElementById("new-garlic").checked) {
+    pizza.toppings[13] = "Garlic";
+    $(".garlic").html(pizza.toppings[13]);
+    $(".garlic").show();
+  }
+
+  if (document.getElementById("new-sausage").checked) {
+    pizza.toppings[13] = "Artichoke";
+    $(".sausage").html(pizza.toppings[13]);
+    $(".sausage").show();
+  }
+
 
   let buttons = $("#buttons");
   buttons.empty();
@@ -73,7 +186,7 @@ function displayPizzaDetails(customerOrderDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(customerOrderDisplay.pizzas).forEach(function (key) {
     const pizza = customerOrderDisplay.findPizza(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza one" + "</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza #: " + pizza.id + "</li>";
   });
   pizzasList.html(htmlForPizzaInfo);
 };

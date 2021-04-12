@@ -12,14 +12,32 @@
 </head>
 
 <body>
+  <div style="background-color: #005177; color: white; height: 80px;">
+    <div style="float:right; padding: 13px; margin-right: 30px;">
+      <img src="img/pizza.png" alt="pizza-pic" width="70px;">
+    </div>
+
+    <div style="padding: 23px;">
+      <h4>Pizza Parlor</h4>
+    </div>
+  </div>
+
+  <div style="background-color: #f6f6f6; height: 300px;" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img style="padding: 30px;" src="img/unnamed.jpg" alt="">
+      </div>
+      <div class="col-md-6">
+        <img style="padding: 30px;" src="img/unnamed.jpg" alt="">
+      </div>
+    </div>
+  </div>
 
   <div class="container">
-    <h1>Welcome to Roma Pizzeria</h1>
     <hr>
-    <h2>Add a Pizza:</h2>
+    <h4 style="text-align: center;">Customize your Pizza</h4>
     <hr>
     <form id="new-pizza">
-
       <div class="row">
         <div class="col-md-3">
           <div class="form-group">
@@ -54,7 +72,8 @@
       </div>
 
       <div>
-        <h3 style="text-align: center; padding: 15px;">Toppings</h3>
+        <h4>Toppings</h4>
+        <hr>
       </div>
 
       <div class="row">
@@ -111,7 +130,7 @@
         </div>
         <div class="col-md-2">
           <div class="form-group">
-            <img src="img/olive.png" alt="olive-pic" width="70px" height="70px">
+            <img src="img/olive.png" alt="blackolive-pic" width="70px" height="70px">
             <p>Black Olives</p>
             <input type="checkbox" id="new-blackolives">
           </div>
@@ -191,46 +210,37 @@
         </div>
       </div>
 
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <button type="submit" class="btn-primary">Add</button>
-  </form>
-  <hr>
-  <h2>Pizzas:</h2>
-  <ul id="pizzas">
-  </ul>
-
-
-  <div id="show-pizza">
-    <p>Crust Size: <span class="crust-size"></span></p>
-    <p>Crust Type: <span class="crust-type"></span></p>
-    <p>Toppings:</p>
-    <p>Cheese:<span class="cheese"></span></p>
-    <p>Tomato:<span class="tomato"></span></p>
-    <p>Pepperoni:<span class="pepperoni"></span></p>
-    <p>Red Onion:<span class="redonion"></span></p>
-    <p>Olive Oil:<span class="oliveoil"></span></p>
-    <p>Black Olives:<span class="blackolives"></span></p>
-    <div id="buttons">
+      <button type="submit" class="btn-primary">Add Pizza</button>
+    </form>
+    <hr>
+    <h2>Pizzas:</h2>
+    <ul id="pizzas">
+    </ul>
+    <div id="show-pizza">
+      <span class="crust-size"></span>
+      <span class="crust-type"></span>
+      <p>Toppings:</p>
+      <span class="cheese"></span>
+      <span class="mushroom"></span>
+      <span class="greenpepper"></span>
+      <span class="tomato"></span>
+      <span class="pepperoni"></span>
+      <span class="redonion"></span>
+      <span class="oliveoil"></span>
+      <span class="blackolives"></span>
+      <span class="chicken"></span>
+      <span class="beef"></span>
+      <span class="redpepper"></span>
+      <span class="jalapeno"></span>
+      <span class="spinach"></span>
+      <span class="pineapple"></span>
+      <span class="anchovy"></span>
+      <span class="artichoke"></span>
+      <span class="garlic"></span>
+      <span class="sausage"></span>
+      <div id="buttons">
+      </div>
     </div>
-  </div>
-
-
   </div>
 
   <script src="js/jquery-3.6.0.js"></script>
