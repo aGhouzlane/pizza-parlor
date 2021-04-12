@@ -15,11 +15,13 @@
 
   <div class="container">
     <h1>Welcome to Roma Pizzeria</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <hr>
-        <h2>Add a Pizza:</h2>
-        <form id="new-pizza">
+    <hr>
+    <h2>Add a Pizza:</h2>
+    <hr>
+    <form id="new-pizza">
+
+      <div class="row">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="new-crust-size">Crust Size</label>
             <TR>
@@ -34,6 +36,8 @@
               </TD>
             </TR>
           </div>
+        </div>
+        <div class="col-md-3">
           <div class="form-group">
             <label for="new-crust-type">Crust Type</label>
             <TR>
@@ -46,62 +50,187 @@
               </TD>
             </TR>
           </div>
-          <div>
-            <h3>Toppings</h3>
-          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="text-align: center; padding: 15px;">Toppings</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/cheese.png" alt="cheese-pic" width="70px" height="70px">
             <p>Extra Cheese</p>
             <input type="checkbox" id="new-cheese">
           </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/mushroom.png" alt="mushroom-pic" width="70px" height="70px">
+            <p>Mashroom</p>
+            <input type="checkbox" id="new-mushroom">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/pepper.png" alt="greenpepper-pic" width="70px" height="70px">
+            <p>Green pepper</p>
+            <input type="checkbox" id="new-greenpepper">
+          </div>
+        </div>
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/tomato.png" alt="tomato-pic" width="70px" height="70px">
             <p>Tomato</p>
             <input type="checkbox" id="new-tomato">
           </div>
+        </div>
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/pepperoni.png" alt="pepperoni-pic" width="70px" height="70px">
             <p>Pepperoni</p>
             <input type="checkbox" id="new-pepperoni">
           </div>
+        </div>
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/onions.png" alt="onion-pic" width="70px" height="70px">
             <p>Red Onion</p>
             <input type="checkbox" id="new-redonion">
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/olive-oil.png" alt="oliveoil-pic" width="70px" height="70px">
             <p>Olive Oil</p>
             <input type="checkbox" id="new-oliveoil">
           </div>
+        </div>
+        <div class="col-md-2">
           <div class="form-group">
             <img src="img/olive.png" alt="olive-pic" width="70px" height="70px">
             <p>Black Olives</p>
             <input type="checkbox" id="new-blackolives">
           </div>
-          <button type="submit" class="btn-primary">Add</button>
-        </form>
-        <hr>
-        <h2>Pizzas:</h2>
-        <ul id="pizzas">
-        </ul>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/chicken-leg.png" alt="chicken-pic" width="70px" height="70px">
+            <p>Chicken</p>
+            <input type="checkbox" id="new-chicken">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/beef.png" alt="beef-pic" width="70px" height="70px">
+            <p>Beef</p>
+            <input type="checkbox" id="new-beef">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/red-pepper.png" alt="redpepper-pic" width="70px" height="70px">
+            <p>Red pepper</p>
+            <input type="checkbox" id="new-redpepper">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/jalapeno.png" alt="jalapeno-pic" width="70px" height="70px">
+            <p>Jalapeno</p>
+            <input type="checkbox" id="new-jalapeno">
+          </div>
+        </div>
+
       </div>
-      <div class="col-md-6">
-        <div id="show-pizza">
-          <p>Crust Size: <span class="crust-size"></span></p>
-          <p>Crust Type: <span class="crust-type"></span></p>
-          <p>Toppings:</p>
-          <p>Cheese:<span class="cheese"></span></p>
-          <p>Tomato:<span class="tomato"></span></p>
-          <p>Pepperoni:<span class="pepperoni"></span></p>
-          <p>Red Onion:<span class="redonion"></span></p>
-          <p>Olive Oil:<span class="oliveoil"></span></p>
-          <p>Black Olives:<span class="blackolives"></span></p>
-          <div id="buttons">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/spinach.png" alt="spinach-pic" width="70px" height="70px">
+            <p>Spinach</p>
+            <input type="checkbox" id="new-spinach">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/pineapple.png" alt="pineapple-pic" width="70px" height="70px">
+            <p>Pineapple</p>
+            <input type="checkbox" id="new-pineapple">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/anchovy.png" alt="anchovy-pic" width="70px" height="70px">
+            <p>Anchovy</p>
+            <input type="checkbox" id="new-anchovy">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/artichoke.png" alt="artichoke-pic" width="70px" height="70px">
+            <p>Artichoke</p>
+            <input type="checkbox" id="new-artichoke">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/garlic.png" alt="garlic-pic" width="70px" height="70px">
+            <p>Garlic</p>
+            <input type="checkbox" id="new-garlic">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <img src="img/sausage.png" alt="sausage-pic" width="70px" height="70px">
+            <p>Sausage</p>
+            <input type="checkbox" id="new-sausage">
           </div>
         </div>
       </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <button type="submit" class="btn-primary">Add</button>
+  </form>
+  <hr>
+  <h2>Pizzas:</h2>
+  <ul id="pizzas">
+  </ul>
+
+
+  <div id="show-pizza">
+    <p>Crust Size: <span class="crust-size"></span></p>
+    <p>Crust Type: <span class="crust-type"></span></p>
+    <p>Toppings:</p>
+    <p>Cheese:<span class="cheese"></span></p>
+    <p>Tomato:<span class="tomato"></span></p>
+    <p>Pepperoni:<span class="pepperoni"></span></p>
+    <p>Red Onion:<span class="redonion"></span></p>
+    <p>Olive Oil:<span class="oliveoil"></span></p>
+    <p>Black Olives:<span class="blackolives"></span></p>
+    <div id="buttons">
     </div>
+  </div>
+
+
   </div>
 
   <script src="js/jquery-3.6.0.js"></script>
