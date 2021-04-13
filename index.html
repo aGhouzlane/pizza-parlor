@@ -25,7 +25,11 @@
   <div style="background-color: #f6f6f6; height: 300px;" class="container">
     <div class="row">
       <div class="col-md-6">
-        <img style="padding: 30px;" src="img/unnamed.jpg" alt="">
+        <div style="border: dashed; padding: 40px; margin-top: 35px; text-align:center;">
+          <p style="color: blue;"><b>Order 2 medium pizzas and 30% OFF</b></p>
+          <p style="color: red;"><b>Order 3 medium pizzas and 40% OFF</b></p>
+          <p style="color: green;"><b>Order 3 large pizzas and 40% OFF</b></p>
+        </div>
       </div>
       <div class="col-md-6">
         <img style="padding: 30px;" src="img/unnamed.jpg" alt="">
@@ -35,7 +39,7 @@
 
   <div class="container">
     <hr>
-    <h4 style="text-align: center;">Customize your Pizza</h4>
+    <h4>Customize your Pizza</h4>
     <hr>
     <form id="new-pizza">
       <div class="row">
@@ -72,6 +76,7 @@
       </div>
 
       <div>
+        <hr>
         <h4>Toppings</h4>
         <hr>
       </div>
@@ -209,8 +214,7 @@
           </div>
         </div>
       </div>
-
-      <button type="submit" class="btn-primary">Add Pizza</button>
+      <button id="addnewpizza" type="submit" class="btn-primary">Add Pizza</button>
     </form>
     <hr>
     <h2>Pizzas:</h2>
@@ -240,11 +244,17 @@
       <span class="sausage"></span>
       <div id="buttons">
       </div>
+      <button id="redirect" type="submit" class="btn-primary">Add another Pizza</button>
     </div>
   </div>
 
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
+
+
+  <div style="background-color: #005177; color: white; height: 80px;">
+
+  </div>
 </body>
 
 </html>

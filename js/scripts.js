@@ -49,132 +49,61 @@ function attachPizzaListeners() {
     $("#show-pizza").hide();
     displayPizzaDetails(customerOrder);
   });
+
+  $("#redirect").click(function () {
+    $("form#new-pizza").show();
+    $("#size-option").val("");
+    $("#type-option").val("");
+    $('input[type=checkbox]').each(function () {
+      this.checked = false;
+    });
+  });
+
 };
 
 function showPizza(pizzaId) {
   const pizza = customerOrder.findPizza(pizzaId);
   $("#show-pizza").show();
 
-  pizza.crustSize = document.getElementById("size-option").value;
   $(".crust-size").html(pizza.crustSize);
 
-  pizza.crustType = document.getElementById("type-option").value;
   $(".crust-type").html(pizza.crustType);
 
-  if (document.getElementById("new-cheese").checked) {
-    pizza.toppings[0] = "Cheese";
-    $(".cheese").html(pizza.toppings[0]);
-    $(".cheese").show();
-  }
+  $(".cheese").html(pizza.toppings[0]);
 
-  if (document.getElementById("new-mushroom").checked) {
-    pizza.toppings[1] = "Mushroom";
-    $(".mushroom").html(pizza.toppings[1]);
-    $(".mushroom").show();
-  }
+  $(".mushroom").html(pizza.toppings[1]);
 
-  if (document.getElementById("new-greenpepper").checked) {
-    pizza.toppings[2] = "Green Peper";
-    $(".greenpepper").html(pizza.toppings[2]);
-    $(".greenpepper").show();
-  }
+  $(".greenpepper").html(pizza.toppings[2]);
 
-  if (document.getElementById("new-tomato").checked) {
-    pizza.toppings[3] = "Tomato";
-    $(".tomato").html(pizza.toppings[3]);
-    $(".tomato").show();
-  }
+  $(".tomato").html(pizza.toppings[3]);
 
-  if (document.getElementById("new-pepperoni").checked) {
-    pizza.toppings[4] = "Pepperoni";
-    $(".pepperoni").html(pizza.toppings[4]);
-    $(".pepperoni").show();
-  }
+  $(".pepperoni").html(pizza.toppings[4]);
 
-  if (document.getElementById("new-redonion").checked) {
-    pizza.toppings[5] = "Red Onion";
-    $(".redonion").html(pizza.toppings[5]);
-    $(".redonion").show();
-  }
+  $(".redonion").html(pizza.toppings[5]);
 
-  if (document.getElementById("new-oliveoil").checked) {
-    pizza.toppings[6] = "Olive Oil";
-    $(".oliveoil").html(pizza.toppings[6]);
-    $(".oliveoil").show();
-  }
+  $(".oliveoil").html(pizza.toppings[6]);
 
-  if (document.getElementById("new-oliveoil").checked) {
-    pizza.toppings[7] = "Olive Oil";
-    $(".oliveoil").html(pizza.toppings[7]);
-    $(".oliveoil").show();
-  }
+  $(".blackolives").html(pizza.toppings[7]);
 
-  if (document.getElementById("new-blackolives").checked) {
-    pizza.toppings[8] = "Black Olives";
-    $(".blackolives").html(pizza.toppings[8]);
-    $(".blackolives").show();
-  }
+  $(".chicken").html(pizza.toppings[8]);
 
-  if (document.getElementById("new-chicken").checked) {
-    pizza.toppings[9] = "Chicken";
-    $(".chicken").html(pizza.toppings[9]);
-    $(".chicken").show();
-  }
+  $(".beef").html(pizza.toppings[9]);
 
-  if (document.getElementById("new-beef").checked) {
-    pizza.toppings[10] = "Beef";
-    $(".beef").html(pizza.toppings[10]);
-    $(".beef").show();
-  }
+  $(".redpepper").html(pizza.toppings[10]);
 
-  if (document.getElementById("new-redpepper").checked) {
-    pizza.toppings[11] = "Red pepper";
-    $(".redpepper").html(pizza.toppings[11]);
-    $(".redpepper").show();
-  }
+  $(".jalapeno").html(pizza.toppings[11]);
 
-  if (document.getElementById("new-jalapeno").checked) {
-    pizza.toppings[12] = "Jalapeno";
-    $(".jalapeno").html(pizza.toppings[12]);
-    $(".jalapeno").show();
-  }
+  $(".spinach").html(pizza.toppings[12]);
 
-  if (document.getElementById("new-spinach").checked) {
-    pizza.toppings[13] = "Spinach";
-    $(".spinach").html(pizza.toppings[13]);
-    $(".spinach").show();
-  }
+  $(".pineapple").html(pizza.toppings[13]);
 
-  if (document.getElementById("new-pineapple").checked) {
-    pizza.toppings[11] = "Pineapple";
-    $(".pineapple").html(pizza.toppings[11]);
-    $(".pineapple").show();
-  }
+  $(".anchovy").html(pizza.toppings[14]);
 
-  if (document.getElementById("new-anchovy").checked) {
-    pizza.toppings[12] = "Anchovy";
-    $(".anchovy").html(pizza.toppings[12]);
-    $(".anchovy").show();
-  }
+  $(".artichoke").html(pizza.toppings[15]);
 
-  if (document.getElementById("new-artichoke").checked) {
-    pizza.toppings[13] = "Artichoke";
-    $(".artichoke").html(pizza.toppings[13]);
-    $(".artichoke").show();
-  }
+  $(".garlic").html(pizza.toppings[16]);
 
-  if (document.getElementById("new-garlic").checked) {
-    pizza.toppings[13] = "Garlic";
-    $(".garlic").html(pizza.toppings[13]);
-    $(".garlic").show();
-  }
-
-  if (document.getElementById("new-sausage").checked) {
-    pizza.toppings[13] = "Artichoke";
-    $(".sausage").html(pizza.toppings[13]);
-    $(".sausage").show();
-  }
-
+  $(".sausage").html(pizza.toppings[17]);
 
   let buttons = $("#buttons");
   buttons.empty();
@@ -186,7 +115,7 @@ function displayPizzaDetails(customerOrderDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(customerOrderDisplay.pizzas).forEach(function (key) {
     const pizza = customerOrderDisplay.findPizza(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza #: " + pizza.id + "</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza #: " + pizza.id + "</div>";
   });
   pizzasList.html(htmlForPizzaInfo);
 };
@@ -194,38 +123,103 @@ function displayPizzaDetails(customerOrderDisplay) {
 $(document).ready(function () {
   attachPizzaListeners();
   $("form#new-pizza").submit(function (event) {
-
     event.preventDefault();
-    const inputtedCrustSize = $("input#new-crust-size").val();
-    const inputtedCrustType = $("input#new-crust-type").val();
-    const inputtedCheese = $("input#new-cheese").val();
-    const inputtedTomato = $("input#new-tomato").val();
-    const inputtedPepperoni = $("input#new-pepperoni").val();
-    const inputtedRedOnion = $("input#new-redonion").val();
-    const inputtedOliveOil = $("input#new-oliveoil").val();
-    const inputtedBlackOlives = $("input#new-blackolives").val();
+    let inputtedCrustSize = document.getElementById("size-option").value;
+    let inputtedCrustType = document.getElementById("type-option").value;
+    let inputtedCheese = document.getElementById("new-cheese").checked;
+    if (inputtedCheese) {
+      inputtedCheese = "Cheese";
+    }
+    let inputtedMushroom = document.getElementById("new-mushroom").checked;
+    if (inputtedMushroom) {
+      inputtedMushroom = "Mushroom";
+    }
+    let inputtedGreenpepper = document.getElementById("new-greenpepper").checked;
+    if (inputtedGreenpepper) {
+      inputtedGreenpepper = "Green pepper";
+    }
+    let inputtedTomato = document.getElementById("new-tomato").checked;
+    if (inputtedTomato) {
+      inputtedTomato = "Tomato";
+    }
+
+    let inputtedPepperoni = document.getElementById("new-pepperoni").checked;
+    if (inputtedPepperoni) {
+      inputtedPepperoni = "Pepperoni";
+    }
+    let inputtedRedOnion = document.getElementById("new-redonion").checked;
+    if (inputtedRedOnion) {
+      inputtedRedOnion = "Red Onion";
+    }
+    let inputtedOliveOil = document.getElementById("new-oliveoil").checked;
+    if (inputtedOliveOil) {
+      inputtedOliveOil = "Olive Oil";
+    }
+    let inputtedBlackOlives = document.getElementById("new-blackolives").checked;
+    if (inputtedBlackOlives) {
+      inputtedBlackOlives = "Black Olives";
+    }
+
+    let inputtedChicken = document.getElementById("new-chicken").checked;
+    if (inputtedChicken) {
+      inputtedChicken = "Chicken";
+    }
+    let inputtedBeef = document.getElementById("new-beef").checked;
+    if (inputtedBeef) {
+      inputtedBeef = "Beef";
+    }
+    let inputtedRedpepper = document.getElementById("new-redpepper").checked;
+    if (inputtedRedpepper) {
+      inputtedRedpepper = "Red Pepper";
+    }
+    let inputtedJalopeno = document.getElementById("new-jalapeno").checked;
+    if (inputtedJalopeno) {
+      inputtedJalopeno = "Jalapeno";
+    }
+
+    let inputtedSpinach = document.getElementById("new-spinach").checked;
+    if (inputtedSpinach) {
+      inputtedSpinach = "Spinach";
+    }
+    let inputtedPineapple = document.getElementById("new-pineapple").checked;
+    if (inputtedPineapple) {
+      inputtedPineapple = "Pineapple";
+    }
+    let inputtedAnchovy = document.getElementById("new-anchovy").checked;
+    if (inputtedAnchovy) {
+      inputtedAnchovy = "Anchovy";
+    }
+    let inputtedArtichoke = document.getElementById("new-artichoke").checked;
+    if (inputtedArtichoke) {
+      inputtedArtichoke = "Artichoke";
+    }
+
+    let inputtedGarlic = document.getElementById("new-garlic").checked;
+    if (inputtedGarlic) {
+      inputtedGarlic = "Garlic";
+    }
+    let inputtedSausage = document.getElementById("new-sausage").checked;
+    if (inputtedSausage) {
+      inputtedSausage = "Sausage";
+    }
+
     const inputtedToppings = [
-      inputtedCheese, inputtedTomato,
+      inputtedCheese, inputtedMushroom,
+      inputtedGreenpepper, inputtedTomato,
       inputtedPepperoni, inputtedRedOnion,
-      inputtedOliveOil, inputtedBlackOlives];
-
-    console.log(inputtedToppings);
-
-    // The next three lines are new:
-    $("input#new-crust-size").val("");
-    $("input#new-crust-type").val("");
-    $("input#new-cheese").val("");
-    $("input#new-tomato").val("");
-    $("input#new-pepperoni").val("");
-    $("input#new-redonion").val("");
-    $("input#new-oliveoil").val("");
-    $("input#new-blackolives").val("");
-
+      inputtedOliveOil, inputtedBlackOlives,
+      inputtedChicken, inputtedBeef,
+      inputtedRedpepper, inputtedJalopeno,
+      inputtedSpinach, inputtedPineapple,
+      inputtedAnchovy, inputtedArtichoke,
+      inputtedGarlic, inputtedSausage
+    ];
 
     let newPizza = new Pizza(inputtedCrustSize, inputtedCrustType, inputtedToppings);
     customerOrder.addPizza(newPizza);
 
     console.log(customerOrder.pizzas);
     displayPizzaDetails(customerOrder);  // <--- This is the new line!
+    $("form").hide();
   });
 });
