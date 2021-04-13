@@ -16,12 +16,10 @@
     <div style="float:right; padding: 13px; margin-right: 30px;">
       <img src="img/pizza.png" alt="pizza-pic" width="70px;">
     </div>
-
     <div style="padding: 23px;">
       <h4>Pizza Parlor</h4>
     </div>
   </div>
-
   <div style="background-color: #f6f6f6; height: 300px;" class="container">
     <div class="row">
       <div class="col-md-6">
@@ -36,12 +34,11 @@
       </div>
     </div>
   </div>
-
   <div class="container">
-    <hr>
-    <h4>Customize your Pizza</h4>
-    <hr>
     <form id="new-pizza">
+      <hr>
+      <h4>Customize your Pizza</h4>
+      <hr>
       <div class="row">
         <div class="col-md-3">
           <div class="form-group">
@@ -74,13 +71,11 @@
           </div>
         </div>
       </div>
-
       <div>
         <hr>
         <h4>Toppings</h4>
         <hr>
       </div>
-
       <div class="row">
         <div class="col-md-2">
           <div class="form-group">
@@ -168,7 +163,6 @@
             <input type="checkbox" id="new-jalapeno">
           </div>
         </div>
-
       </div>
       <div class="row">
         <div class="col-md-2">
@@ -214,46 +208,85 @@
           </div>
         </div>
       </div>
-      <button id="addnewpizza" type="submit" class="btn-primary">Add Pizza</button>
+      <div style="text-align: center;">
+        <button id="addnewpizza" type="submit" class="btn-primary">Add new pizza</button>
+      </div>
     </form>
     <hr>
-    <h2>Pizzas:</h2>
-    <ul id="pizzas">
-    </ul>
-    <div id="show-pizza">
-      <span class="crust-size"></span>
-      <span class="crust-type"></span>
-      <p>Toppings:</p>
-      <span class="cheese"></span>
-      <span class="mushroom"></span>
-      <span class="greenpepper"></span>
-      <span class="tomato"></span>
-      <span class="pepperoni"></span>
-      <span class="redonion"></span>
-      <span class="oliveoil"></span>
-      <span class="blackolives"></span>
-      <span class="chicken"></span>
-      <span class="beef"></span>
-      <span class="redpepper"></span>
-      <span class="jalapeno"></span>
-      <span class="spinach"></span>
-      <span class="pineapple"></span>
-      <span class="anchovy"></span>
-      <span class="artichoke"></span>
-      <span class="garlic"></span>
-      <span class="sausage"></span>
-      <div id="buttons">
+    <div id="result">
+      <ul id="pizzas">
+      </ul>
+      <div id="show-pizza">
+        <div class="card">
+          <div class="card-body">
+            <ul id="output">
+              <li><span class="crust-size"></span></li>
+              <li><span class="crust-type"></span></li>
+              <div><b>Toppings:</b></div>
+              <li><span class="cheese"></span></li>
+              <li><span class="mushroom"></span></li>
+              <span class="greenpepper"></span>
+              <span class="tomato"></span>
+              <span class="pepperoni"></span>
+              <span class="redonion"></span>
+              <span class="oliveoil"></span>
+              <span class="blackolives"></span>
+              <span class="chicken"></span>
+              <span class="beef"></span>
+              <span class="redpepper"></span>
+              <span class="jalapeno"></span>
+              <span class="spinach"></span>
+              <span class="pineapple"></span>
+              <span class="anchovy"></span>
+              <span class="artichoke"></span>
+              <span class="garlic"></span>
+              <span class="sausage"></span>
+            </ul>
+            <div style="float: right;" id="buttons">
+            </div>
+          </div>
+        </div>
       </div>
-      <button id="redirect" type="submit" class="btn-primary">Add another Pizza</button>
+      <div class="card">
+        <div class="card-body">
+          <div style="float: right; padding: 20px;">
+            <button id="redirect" type="submit" class="btn-success">Add another pizza</button>
+          </div>
+          <div style="float: right; padding: 20px;">
+            <button id="checkout" type="submit" class="btn-info">Check out</button>
+          </div>
+          <div id="price">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="address" class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="last-name">Address:</label>
+          <input type="text" id="last-name" class="form-control">
+        </div>
+        <input type="submit" class="btn-success" id="place-order" value="Place order">
+      </div>
+    </div>
+    <div id="order-placed" class="card">
+      <div class="card-body">
+        <p>Your order was place successfully. You should expect to receive your order within 30 - 45 minutes.</p>
+        <p>Thank you for your order. Please refresh page to add a new order.</p>
+      </div>
     </div>
   </div>
-
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
-
-
   <div style="background-color: #005177; color: white; height: 80px;">
-
   </div>
 </body>
 

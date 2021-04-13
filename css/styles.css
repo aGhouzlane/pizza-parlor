@@ -1,4 +1,16 @@
-#show-pizza {
+#show-pizza, #price, #checkout, #address, #order-placed{
+  display: none;
+}
+
+.h2, h2 {
+  margin-left: -38px;
+}
+
+ul#output li {
+  display:inline;
+}
+
+#redirect{
   display: none;
 }
 
