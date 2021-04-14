@@ -31,76 +31,29 @@ CustomerOrder.prototype.deletePizza = function (id) {
 }
 
 CustomerOrder.prototype.calculatePrice = function (pizzaId) {
-
   const pizza = customerOrder.findPizza(pizzaId);
-  let totalPrice = 0;
+
+  this.totalPrice = 0;
   if (pizza.crustSize == "X-Large") {
-    totalPrice += 12;
+    this.totalPrice += 12;
   } else if (pizza.crustSize == "Large") {
-    totalPrice += 10;
+    this.totalPrice += 10;
   } else if (pizza.crustSize == "Medium") {
-    totalPrice += 7;
+    this.totalPrice += 7;
   }
   else if (pizza.crustSize == "Small") {
-    totalPrice += 5;
+    this.totalPrice += 5;
   }
-
-  if (pizza.toppings[0] == "Cheese") {
-    totalPrice += 2;
+  const newToppings = ["Cheese", "Mushroom", "Green pepper", "Tomato", "Pepperoni", "Red Onion",
+    "Olive Oil", "Black Olives", "Chicken", "Beef", "Red Pepper", "Jalapeno", "Spinach", "Pineapple",
+    "Anchovy", "Artichoke", "Garlic", "Sausage"
+  ];
+  for (let i = 0; i < newToppings.length; i++) {
+    if (pizza.toppings[i] == newToppings[i]) {
+      this.totalPrice += 2;
+    }
   }
-  if (pizza.toppings[1] == "Mushroom") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[2] == "Green pepper") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[3] == "Tomato") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[4] == "Pepperoni") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[5] == "Red Onion") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[6] == "Olive Oil") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[7] == "Black Olives") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[8] == "Chicken") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[9] == "Beef") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[10] == "Red Pepper") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[11] == "Jalapeno") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[12] == "Spinach") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[13] == "Pineapple") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[14] == "Anchovy") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[15] == "Artichoke") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[16] == "Garlic") {
-    totalPrice += 2;
-  }
-  if (pizza.toppings[17] == "Sausage") {
-    totalPrice += 2;
-  }
-
-  return totalPrice;
+  return this.totalPrice;
 }
 
 function Pizza(crustSize, crustType, toppings = []) {
@@ -124,8 +77,6 @@ function attachPizzaListeners() {
   });
 
 };
-
-
 
 function showPizza(pizzaId) {
   const pizza = customerOrder.findPizza(pizzaId);
@@ -153,7 +104,7 @@ function showPizza(pizzaId) {
 
   let buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + + pizza.id + ">Delete</button>");
+  buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete</button>");
 }
 
 function displayPizzaDetails(customerOrderDisplay) {
@@ -161,17 +112,19 @@ function displayPizzaDetails(customerOrderDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(customerOrderDisplay.pizzas).forEach(function (key) {
     const pizza = customerOrderDisplay.findPizza(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza #" + pizza.id +
-      " order was added successfully. <button>Check order</button></li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza order " + pizza.id +
+      " was added successfully..............................................................................................................................................View order</li>";
   });
   pizzasList.html("<h2>Pizzas:</h2>" + htmlForPizzaInfo);
 };
+
 let finalPrice = 0;
+let testTotalPrice = 0;
 $(document).ready(function () {
   attachPizzaListeners();
-
   $("form#new-pizza").submit(function (event) {
     event.preventDefault();
+
     let inputtedCrustSize = document.getElementById("size-option").value;
     let inputtedCrustType = document.getElementById("type-option").value;
     let inputtedCheese = document.getElementById("new-cheese").checked;
@@ -251,7 +204,6 @@ $(document).ready(function () {
       inputtedSausage = "Sausage";
     }
 
-
     const inputtedToppings = [
       inputtedCheese, inputtedMushroom,
       inputtedGreenpepper, inputtedTomato,
@@ -267,17 +219,18 @@ $(document).ready(function () {
     let newPizza = new Pizza(inputtedCrustSize, inputtedCrustType, inputtedToppings);
     customerOrder.addPizza(newPizza);
 
-
-    let testTotalPrice = customerOrder.calculatePrice(newPizza.id);
+    testTotalPrice = customerOrder.calculatePrice(newPizza.id);
     finalPrice += testTotalPrice;
-    console.log(testTotalPrice);
-    console.log(finalPrice);
 
-    console.log(customerOrder.pizzas);
-    displayPizzaDetails(customerOrder);  // <--- This is the new line!
+    displayPizzaDetails(customerOrder);
     $("form").hide();
     $("#redirect").show();
     $("#checkout").show();
+
+    $("#home").click(function () {
+      location.reload();
+      return false;
+    });
 
     $("#checkout").click(function () {
       $("#result").hide();
