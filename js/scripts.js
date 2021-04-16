@@ -55,13 +55,12 @@ function showPizza(pizzaId) {
   const pizza = customerOrder.findPizza(pizzaId);
   $("#show-pizza").show();
 
-  pizza.crustSize = document.getElementById('option').value;
-  $(".crust-type").html(pizza.crustSize);
+  pizza.crustSize = document.getElementById("size-option").value;
+  $(".crust-size").html(pizza.crustSize);
 
-  if (document.getElementById('new-crust-type').checked) {
-    pizza.crustType = "Thin Crust";
-    $(".curst-size").html(pizza.crustType);
-  }
+  pizza.crustType = document.getElementById("type-option").value;
+  $(".crust-type").html(pizza.crustType);
+
 
   $(".cheese").html(pizza.toppings[0]);
 
@@ -75,7 +74,7 @@ function displayPizzaDetails(customerOrderDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(customerOrderDisplay.pizzas).forEach(function (key) {
     const pizza = customerOrderDisplay.findPizza(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.crustSize + " " + pizza.crustType + "</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + "Pizza one" + "</li>";
   });
   pizzasList.html(htmlForPizzaInfo);
 };
