@@ -61,7 +61,6 @@ function showPizza(pizzaId) {
   pizza.crustType = document.getElementById("type-option").value;
   $(".crust-type").html(pizza.crustType);
 
-
   $(".cheese").html(pizza.toppings[0]);
 
   let buttons = $("#buttons");
