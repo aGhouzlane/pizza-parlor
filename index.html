@@ -13,6 +13,97 @@
 
 <body>
 
+  <div class="container">
+    <h1>Welcome to Roma Pizzeria</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <hr>
+        <h2>Add a Pizza:</h2>
+        <form id="new-pizza">
+          <div class="form-group">
+            <label for="new-crust-size">Crust Size</label>
+            <TR>
+              <TD ALIGN="center">
+                <select id="option">
+                  <option value="Large">Large</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Small">Small</option>
+                  <option value="X-Large">X-Large</option>
+                </select>
+              </TD>
+            </TR>
+
+          </div>
+          <div class="form-group">
+            <label for="new-crust-size">Regular Crust</label>
+            <div>
+              <img src="img/regular-crust.jpg" alt="" width="70px" height="70px">
+            </div>
+            <div>
+              <input type="checkbox" id="new-crust-size">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="new-crust-type">Crust Type</label>
+            <div>
+              <img src="img/Thin-Crust-PIzza-2.jpg" alt="" width="70px" height="70px">
+            </div>
+            <div>
+              <input type="checkbox" id="new-crust-type">
+            </div>
+          </div>
+          <div>
+            <h3>Toppings</h3>
+          </div>
+          <div class="form-group">
+            <label for="new-cheese">Extra Cheese</label>
+            <input type="text" class="form-control" id="new-cheese">
+          </div>
+          <div class="form-group">
+            <label for="new-tomato">Tomato</label>
+            <input type="text" class="form-control" id="new-tomato">
+          </div>
+          <div class="form-group">
+            <label for="new-pepperoni">Pepperoni</label>
+            <input type="text" class="form-control" id="new-pepperoni">
+          </div>
+          <div class="form-group">
+            <label for="new-redonion">Red Onion</label>
+            <input type="text" class="form-control" id="new-redonion">
+          </div>
+          <div class="form-group">
+            <label for="new-oliveoil">Olive Oil</label>
+            <input type="text" class="form-control" id="new-oliveoil">
+          </div>
+          <div class="form-group">
+            <label for="new-blackolives">Black Olives</label>
+            <input type="text" class="form-control" id="new-blackolives">
+          </div>
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+        <hr>
+        <h2>Pizzas:</h2>
+        <ul id="pizzas">
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div id="show-pizza">
+          <p>Crust Size: <span class="curst-size"></span></p>
+          <p>Crust Type: <span class="crust-type"></span></p>
+          <p>Toppings:</p>
+          <p>Cheese:<span class="cheese"></span></p>
+          <p>Tomato:<span class="tomato"></span></p>
+          <p>Pepperoni:<span class="pepperoni"></span></p>
+          <p>Red Onion:<span class="redonion"></span></p>
+          <p>Olive Oil:<span class="oliveoil"></span></p>
+          <p>Black Olives:<span class="blackolives"></span></p>
+          <div id="buttons">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
 </body>
