@@ -236,6 +236,10 @@ $(document).ready(function () {
     $("#price").show();
     $("#price").text("Total Price: $" + (customerOrder.currentPrice += newPizza.price));
 
+    if (customerOrder.currentPrice == 0) {
+      $("#checkout").hide();
+    }
+
     $("#redirect").click(function () {
       $("form#new-pizza").show();
       $("#size-option").val("");
