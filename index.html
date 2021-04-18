@@ -22,14 +22,10 @@
   </div>
   <div style="background-color: #f6f6f6; height: 300px;" class="container">
     <div class="row">
-      <div class="col-md-6">
-        <div style="border: dashed; padding: 40px; margin-top: 35px; text-align:center;">
-          <p style="color: blue;"><b>Order 2 medium pizzas and 30% OFF</b></p>
-          <p style="color: red;"><b>Order 3 medium pizzas and 40% OFF</b></p>
-          <p style="color: green;"><b>Order 3 large pizzas and 40% OFF</b></p>
-        </div>
+      <div class="col-md-3">
+
       </div>
-      <div class="col-md-6">
+      <div class="col-md-9">
         <img style="padding: 30px;" src="img/unnamed.jpg" alt="">
       </div>
     </div>
@@ -222,9 +218,9 @@
             <ul id="output">
               <li><span class="crust-size"></span></li>
               <li><span class="crust-type"></span></li>
-              <div><b>Toppings:</b></div>
-              <li><span class="cheese"></span></li>
-              <li><span class="mushroom"></span></li>
+              <b>Toppings:</b>
+              <span class="cheese"></span>
+              <span class="mushroom"></span>
               <span class="greenpepper"></span>
               <span class="tomato"></span>
               <span class="pepperoni"></span>
@@ -255,7 +251,8 @@
           <div style="float: right; padding: 20px;">
             <button id="checkout" type="submit" class="btn-info">Check out</button>
           </div>
-          <div id="price">
+          <div>
+            <p id="price"></p>
           </div>
         </div>
       </div>
@@ -265,6 +262,10 @@
         <div class="form-group">
           <label for="first-name">First Name:</label>
           <input type="text" id="first-name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" class="form-control">
         </div>
         <div class="form-group">
           <label for="last-name">Last Name:</label>
