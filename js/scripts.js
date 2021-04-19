@@ -219,6 +219,7 @@ $(document).ready(function () {
     priceArray.push(newPizza.price);
     displayPizzaDetails(customerOrder);
 
+    $("#card-display").show();
     $("form").hide();
     $("#redirect").show();
     $("#checkout").show();

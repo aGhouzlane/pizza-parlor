@@ -1,4 +1,4 @@
-#show-pizza, #price, #checkout, #address, #order-placed{
+#show-pizza, #price, #checkout, #address, #order-placed, #card-display{
   display: none;
 }
 
