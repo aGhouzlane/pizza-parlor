@@ -255,8 +255,5 @@ $(document).ready(function () {
       $("#order-placed").show();
       $("#address").hide();
     });
-
   });
-
-
 });
